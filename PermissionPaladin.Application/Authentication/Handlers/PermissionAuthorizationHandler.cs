@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using PermissionPaladin.Application.Authentication.Models;
+using PermissionPaladin.Application.Services;
 using PermissionPaladin.Domain.Roles.Permissions;
 using PermissionPaladin.Persistance.Interfaces;
 
@@ -9,11 +10,14 @@ namespace PermissionPaladin.Application.Authentication.Handlers;
 public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionRequirement>
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;
+    private readonly IUserService _userService;
 
     public PermissionAuthorizationHandler(
-        IServiceScopeFactory serviceScopeFactory)
+        IServiceScopeFactory serviceScopeFactory,
+        IUserService userService)
     {
         _serviceScopeFactory = serviceScopeFactory;
+        _userService = userService;
     }
 
     protected override async Task HandleRequirementAsync(
@@ -35,7 +39,7 @@ public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionReq
         using var scope = _serviceScopeFactory.CreateScope();
         var permissionRepository = scope.ServiceProvider.GetRequiredService<IPermissionRepository>();
 
-        return await permissionRepository.GetUserPermissions(0);
+        return await permissionRepository.GetUserPermissions(_userService.GetCurrentUserId());
     }
 
     private static bool HasPermission(List<Permission> permissions, string requiredPermission)

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -14,6 +14,11 @@
   <ItemGroup>
     <ProjectReference Include="..\PermissionPaladin.Domain\PermissionPaladin.Domain.csproj" />
     <ProjectReference Include="..\PermissionPaladin.Persistance\PermissionPaladin.Persistance.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="User\Commands\" />
+    <Folder Include="User\Queries\" />
   </ItemGroup>
 
 </Project>
