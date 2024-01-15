@@ -56,7 +56,7 @@ namespace PermissionPaladin.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Permission",
+                name: "Permissions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -65,7 +65,7 @@ namespace PermissionPaladin.Persistance.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Permission", x => x.Id);
+                    table.PrimaryKey("PK_Permissions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,9 +215,9 @@ namespace PermissionPaladin.Persistance.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RolePermission_Permission_PermissionId",
+                        name: "FK_RolePermission_Permissions_PermissionId",
                         column: x => x.PermissionId,
-                        principalTable: "Permission",
+                        principalTable: "Permissions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -227,13 +227,13 @@ namespace PermissionPaladin.Persistance.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "29a51d6a-f35f-4c14-b06e-b01eb200dc2a", "Admin", "ADMIN" },
-                    { 2, "c1850711-a2d3-4084-abb7-1ab72e2ae4e2", "Manager", "MANAGER" },
-                    { 3, "77dde0f4-3c74-4f3d-a852-3f0c14eac1dd", "Customer", "CUSTOMER" }
+                    { 1, "6fab3833-1f98-4db9-84cb-803ba2a99552", "Admin", "ADMIN" },
+                    { 2, "dc852375-3f4a-4058-b4c5-735b1461d994", "Manager", "MANAGER" },
+                    { 3, "adc7147c-1933-4efc-85cf-08a79a5c4fe9", "Customer", "CUSTOMER" }
                 });
 
             migrationBuilder.InsertData(
-                table: "Permission",
+                table: "Permissions",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
@@ -332,7 +332,7 @@ namespace PermissionPaladin.Persistance.Migrations
                 name: "RoleUser");
 
             migrationBuilder.DropTable(
-                name: "Permission");
+                name: "Permissions");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

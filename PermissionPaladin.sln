@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionPaladin.Api", "PermissionPaladin.Api\PermissionPaladin.Api.csproj", "{0EE1DFC2-0AEC-4EA3-910E-9570023541D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermissionPaladin.Api", "PermissionPaladin.Api\PermissionPaladin.Api.csproj", "{0EE1DFC2-0AEC-4EA3-910E-9570023541D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionPaladin.Domain", "PermissionPaladin.Domain\PermissionPaladin.Domain.csproj", "{8CBBCF7B-E00C-4C26-928D-2D022AED17FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermissionPaladin.Domain", "PermissionPaladin.Domain\PermissionPaladin.Domain.csproj", "{8CBBCF7B-E00C-4C26-928D-2D022AED17FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionPaladin.Persistance", "PermissionPaladin.Persistance\PermissionPaladin.Persistance.csproj", "{71179993-26B4-4842-9B97-E73DE12E7D8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermissionPaladin.Persistance", "PermissionPaladin.Persistance\PermissionPaladin.Persistance.csproj", "{71179993-26B4-4842-9B97-E73DE12E7D8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionPaladin.Infrastructure", "PermissionPaladin.Infrastructure\PermissionPaladin.Infrastructure.csproj", "{A53F86F6-C58E-42A9-8C98-9A0F22A6C0D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermissionPaladin.Infrastructure", "PermissionPaladin.Infrastructure\PermissionPaladin.Infrastructure.csproj", "{A53F86F6-C58E-42A9-8C98-9A0F22A6C0D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionPaladin.Application", "PermissionPaladin.Application\PermissionPaladin.Application.csproj", "{ECD46592-E01D-4150-AF47-D03DC022BDA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A53F86F6-C58E-42A9-8C98-9A0F22A6C0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A53F86F6-C58E-42A9-8C98-9A0F22A6C0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A53F86F6-C58E-42A9-8C98-9A0F22A6C0D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD46592-E01D-4150-AF47-D03DC022BDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD46592-E01D-4150-AF47-D03DC022BDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD46592-E01D-4150-AF47-D03DC022BDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD46592-E01D-4150-AF47-D03DC022BDA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

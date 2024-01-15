@@ -139,7 +139,7 @@ namespace PermissionPaladin.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Permission");
+                    b.ToTable("Permissions");
 
                     b.HasData(
                         new
@@ -197,21 +197,21 @@ namespace PermissionPaladin.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "29a51d6a-f35f-4c14-b06e-b01eb200dc2a",
+                            ConcurrencyStamp = "6fab3833-1f98-4db9-84cb-803ba2a99552",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "c1850711-a2d3-4084-abb7-1ab72e2ae4e2",
+                            ConcurrencyStamp = "dc852375-3f4a-4058-b4c5-735b1461d994",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "77dde0f4-3c74-4f3d-a852-3f0c14eac1dd",
+                            ConcurrencyStamp = "adc7147c-1933-4efc-85cf-08a79a5c4fe9",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });

@@ -16,10 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\PermissionPaladin.Application\PermissionPaladin.Application.csproj" />
     <ProjectReference Include="..\PermissionPaladin.Infrastructure\PermissionPaladin.Infrastructure.csproj" />
     <ProjectReference Include="..\PermissionPaladin.Persistance\PermissionPaladin.Persistance.csproj" />
   </ItemGroup>

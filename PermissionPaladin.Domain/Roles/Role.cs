@@ -26,6 +26,6 @@ public class Role : IdentityRole<int>
     }
 
     public void AddPermission(Enums.Permissions permission)
-        => Permissions.Add(new Permission(nameof(permission)));
+        => Permissions.Add(new Permission(permission.ToString()));
 
 }
