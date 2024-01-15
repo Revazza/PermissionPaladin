@@ -2,7 +2,7 @@ namespace PermissionPaladin.Domain.Enums;
 
 public enum Permissions
 {
-    AddProduct,
+    AddProduct = 1,
     UpdateProduct,
     RemoveProduct,
     ViewProduct
