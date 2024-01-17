@@ -11,4 +11,19 @@ public class User : IdentityUser<int>
     {
         Roles = new List<Role>();
     }
+
+    public void AddToRole(Role newRole)
+    {
+        Roles.Add(newRole);
+    }
+
+    public bool IsInRole(Role role)
+    {
+        return Roles.Contains(role);
+    }
+
+    public bool IsInRole(string roleName)
+    {
+        return Roles.Any(role => role.Name == roleName);
+    }
 }

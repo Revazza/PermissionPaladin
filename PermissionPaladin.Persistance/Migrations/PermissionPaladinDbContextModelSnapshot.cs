@@ -161,6 +161,11 @@ namespace PermissionPaladin.Persistance.Migrations
                         {
                             Id = 4,
                             Name = "ViewProduct"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "AccessAdminMenu"
                         });
                 });
 
@@ -197,21 +202,21 @@ namespace PermissionPaladin.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "4f6a5216-be70-4324-9c42-7ebac7e1d7ab",
+                            ConcurrencyStamp = "b1abbcba-1c75-42f9-8a34-015949d7c492",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "0284b460-07b7-4805-a57e-04f5748791dd",
+                            ConcurrencyStamp = "233d63f2-4ddd-48f3-a78a-3328150de79e",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "8608fb2c-9084-404e-9e32-5bad37b450eb",
+                            ConcurrencyStamp = "41cb3298-bdaa-4f56-9860-d6a8b3b31b32",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -250,6 +255,11 @@ namespace PermissionPaladin.Persistance.Migrations
                         new
                         {
                             PermissionId = 4,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            PermissionId = 5,
                             RoleId = 1
                         },
                         new
@@ -349,13 +359,13 @@ namespace PermissionPaladin.Persistance.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5c148838-71c5-4afe-8baa-519a12468154",
+                            ConcurrencyStamp = "0103cd91-19d1-405d-80d9-08d639f34983",
                             Email = "srevaza1236@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SREVAZA1236@GMAIL.COM",
                             NormalizedUserName = "SANDRO",
-                            PasswordHash = "AOo6r/Aj92kHioMqHB9LRHm68TZGCZAzv8Si4N6QHUVKx3BTtwvf9oMnuWkPd1JqKA==",
+                            PasswordHash = "AA4PnlN3XwrF/s9vvPup8d7l1s363rU1KQkKlfGnZkoHZsJuIU/vI5k2SGIGcFUfcg==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,

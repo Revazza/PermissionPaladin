@@ -11,7 +11,7 @@ public class PermissionRepository : GenericRepository<Permission, int>, IPermiss
     {
     }
 
-    public async Task<List<Permission>> GetUserPermissions(int userId)
+    public async Task<List<Permission>> GetUserPermissionsAsync(int userId)
     {
         return await _context
             .Users

@@ -227,10 +227,15 @@ namespace PermissionPaladin.Persistance.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "6fab3833-1f98-4db9-84cb-803ba2a99552", "Admin", "ADMIN" },
-                    { 2, "dc852375-3f4a-4058-b4c5-735b1461d994", "Manager", "MANAGER" },
-                    { 3, "adc7147c-1933-4efc-85cf-08a79a5c4fe9", "Customer", "CUSTOMER" }
+                    { 1, "b1abbcba-1c75-42f9-8a34-015949d7c492", "Admin", "ADMIN" },
+                    { 2, "233d63f2-4ddd-48f3-a78a-3328150de79e", "Manager", "MANAGER" },
+                    { 3, "41cb3298-bdaa-4f56-9860-d6a8b3b31b32", "Customer", "CUSTOMER" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { 1, 0, "0103cd91-19d1-405d-80d9-08d639f34983", "User", "srevaza1236@gmail.com", false, false, null, "SREVAZA1236@GMAIL.COM", "SANDRO", "AA4PnlN3XwrF/s9vvPup8d7l1s363rU1KQkKlfGnZkoHZsJuIU/vI5k2SGIGcFUfcg==", "1234567890", false, null, false, "sandro" });
 
             migrationBuilder.InsertData(
                 table: "Permissions",
@@ -240,7 +245,8 @@ namespace PermissionPaladin.Persistance.Migrations
                     { 1, "AddProduct" },
                     { 2, "UpdateProduct" },
                     { 3, "RemoveProduct" },
-                    { 4, "ViewProduct" }
+                    { 4, "ViewProduct" },
+                    { 5, "AccessAdminMenu" }
                 });
 
             migrationBuilder.InsertData(
@@ -254,7 +260,8 @@ namespace PermissionPaladin.Persistance.Migrations
                     { 2, 2 },
                     { 3, 1 },
                     { 4, 1 },
-                    { 4, 3 }
+                    { 4, 3 },
+                    { 5, 1 }
                 });
 
             migrationBuilder.CreateIndex(

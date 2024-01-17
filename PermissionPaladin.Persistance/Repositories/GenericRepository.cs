@@ -47,7 +47,7 @@ public class GenericRepository<T, TId>
         return _entities.AsQueryable();
     }
 
-    public virtual async Task<T?> GetById(TId id)
+    public virtual async Task<T?> GetByIdAsync(TId id)
     {
         return await _entities.FindAsync(id);
     }

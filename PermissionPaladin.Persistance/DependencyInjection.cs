@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PermissionPaladin.Persistance.Context;
 using PermissionPaladin.Persistance.Interfaces;
 using PermissionPaladin.Persistance.Repositories;
+using PermissionPaladin.Persistance.Services;
 
 namespace PermissionPaladin.Persistance;
 
@@ -22,7 +23,9 @@ public static class DependencyInjection
         this IServiceCollection services)
     {
         return services
+            .AddScoped<IUnitOfWork, UnitOfWork>()
             .AddScoped<IPermissionRepository, PermissionRepository>()
+            .AddScoped<IRoleRepository, RoleRepository>()
             .AddScoped<IManagerRepository, ManagerRepository>()
             .AddScoped<IUserRepository, UserRepository>()
             .AddScoped<ICustomerRepository, CustomerRepository>();

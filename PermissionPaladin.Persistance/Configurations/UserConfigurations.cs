@@ -9,7 +9,6 @@ public class UserConfigurations : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
-
         builder.HasMany(user => user.Roles)
             .WithMany(role => role.Users);
 

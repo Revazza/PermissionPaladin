@@ -23,7 +23,7 @@ public class Permission
     /// <param name="name">Name of the permission</param>
     public Permission(string name)
     {
-        Name = string.Empty;
+        Name = name;
         Roles = new List<Role>();
     }
 

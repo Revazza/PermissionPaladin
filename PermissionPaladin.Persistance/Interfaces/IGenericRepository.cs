@@ -5,7 +5,7 @@ public interface IGenericRepository<T, TId>
 {
     Task<T?> AddAsync(T entity);
     IQueryable<T> AsQuery();
-    Task<T?> GetById(TId id);
+    Task<T?> GetByIdAsync(TId id);
     Task<IDbContextTransaction> BeginTransactionAsync();
     Task CommitTransactionAsync(IDbContextTransaction transaction);
     Task RollBackAsync(IDbContextTransaction transaction);

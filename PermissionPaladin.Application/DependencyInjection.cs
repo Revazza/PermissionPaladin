@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -8,6 +10,10 @@ using PermissionPaladin.Application.Authentication.Models;
 using PermissionPaladin.Application.Authentication.Providers;
 using PermissionPaladin.Application.Authentication.Services;
 using PermissionPaladin.Application.Services;
+using PermissionPaladin.Domain.Roles;
+using PermissionPaladin.Domain.Users;
+using PermissionPaladin.Persistance.Context;
+using System.Reflection;
 using System.Text;
 
 namespace PermissionPaladin.Application;
@@ -19,6 +25,9 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         return services
+            .AddMediatR(cfg =>
+                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly())
+            )
             .ConfigureAuthentication(configuration)
             .AddAuthorization()
             .AddCustomSettings(configuration)
@@ -69,6 +78,10 @@ public static class DependencyInjection
             {
                 opt.TokenValidationParameters = tokenValidationParameters;
             });
+
+        services.AddIdentity<User, Role>()
+            .AddEntityFrameworkStores<PermissionPaladinDbContext>()
+            .AddDefaultTokenProviders();
         return services;
     }
 
