@@ -37,11 +37,21 @@ public class QueryCachingBehaviour<TRequest, TResponse>
 
         var result = await next();
 
+        // if result is default/null or empty IEnumerable, we skip caching
+        if (IsDefaultOrEmpty(result))
+        {
+            return result;
+        }
+
         _cachingService.SetData(cacheKey, result);
 
         return result;
     }
 
+    private static bool IsDefaultOrEmpty(TResponse result)
+        => EqualityComparer<TResponse>.Default.Equals(result, default) ||
+        result is not IEnumerable<object> enumerable ||
+        !enumerable.Any();
     private static string CreateCacheKey(string key, string salt) => $"{key}-{salt}";
 
     private CacheOptions GetCacheOptions(TRequest request)
