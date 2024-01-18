@@ -14,7 +14,7 @@ public class ProductController : ControllerBase
         return Ok("");
     }
 
-    [HasPermission(Permissions.AddProduct)]
+    [HasPermission(AccessPermissions.AddProduct)]
     [HttpPost]
     public async Task<IActionResult> AddProduct()
     {

@@ -16,7 +16,7 @@ public class PermissionConfigurations : IEntityTypeConfiguration<Permission>
 
     private static List<Permission> SeedPermissions()
     {
-        return Enum.GetValues<Permissions>()
+        return Enum.GetValues<AccessPermissions>()
             .Select(p => new Permission((int)p, p.ToString())).ToList();
     }
 

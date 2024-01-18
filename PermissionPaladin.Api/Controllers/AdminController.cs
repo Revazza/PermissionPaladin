@@ -8,7 +8,7 @@ using PermissionPaladin.Domain.Enums;
 namespace PermissionPaladin.Api.Controllers;
 [Route("api/admins")]
 [ApiController]
-[HasPermission(Permissions.AccessAdminMenu)]
+[HasPermission(AccessPermissions.AccessAdminMenu)]
 public class AdminController : ControllerBase
 {
     private readonly ISender _mediator;

@@ -6,7 +6,7 @@ namespace PermissionPaladin.Application.Authentication.Attributes;
 
 public class HasPermissionAttribute : AuthorizeAttribute
 {
-    public HasPermissionAttribute(Permissions permission)
+    public HasPermissionAttribute(AccessPermissions permission)
         : base(policy: permission.ToString())
     {
         AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme;

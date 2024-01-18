@@ -1,6 +1,6 @@
 namespace PermissionPaladin.Domain.Enums;
 
-public enum Permissions
+public enum AccessPermissions
 {
     AddProduct = 1,
     UpdateProduct = 2,

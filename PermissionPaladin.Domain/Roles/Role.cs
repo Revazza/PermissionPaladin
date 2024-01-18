@@ -25,7 +25,7 @@ public class Role : IdentityRole<int>
         Users = new List<User>();
     }
 
-    public void AddPermission(Enums.Permissions permission)
+    public void AddPermission(Enums.AccessPermissions permission)
         => Permissions.Add(new Permission(permission.ToString()));
 
 }

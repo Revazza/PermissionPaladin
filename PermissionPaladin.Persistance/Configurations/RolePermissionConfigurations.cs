@@ -26,7 +26,7 @@ public class RolePermissionConfigurations : IEntityTypeConfiguration<RolePermiss
     {
         return new List<RolePermission>()
         {
-            Create(RolesProvider.Customer,Permissions.ViewProduct),
+            Create(RolesProvider.Customer,AccessPermissions.ViewProduct),
         };
     }
 
@@ -34,20 +34,20 @@ public class RolePermissionConfigurations : IEntityTypeConfiguration<RolePermiss
     {
         return new List<RolePermission>()
         {
-            Create(RolesProvider.Manager,Permissions.AddProduct),
-            Create(RolesProvider.Manager,Permissions.UpdateProduct),
+            Create(RolesProvider.Manager,AccessPermissions.AddProduct),
+            Create(RolesProvider.Manager,AccessPermissions.UpdateProduct),
         };
     }
 
     private static List<RolePermission> GetAdminPermissions()
     {
-        return Enum.GetValues<Permissions>()
+        return Enum.GetValues<AccessPermissions>()
             .Select(p =>
                 Create(RolesProvider.Admin, p)
              ).ToList();
     }
 
-    private static RolePermission Create(Role role, Permissions permission)
+    private static RolePermission Create(Role role, AccessPermissions permission)
     {
         return new RolePermission(role.Id, (int)permission);
     }
