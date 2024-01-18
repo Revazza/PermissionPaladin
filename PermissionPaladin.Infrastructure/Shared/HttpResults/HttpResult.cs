@@ -1,21 +1,10 @@
-namespace PermissionPaladin.Application.Shared;
+namespace PermissionPaladin.Infrastructure.Shared.HttpResults;
 
-public enum HttpResultStatus
-{
-    Ok = 1,
-    Error = 0,
-}
-
-public class HttpResultBase<T>
-{
-    public HttpResultStatus Status { get; set; } = HttpResultStatus.Ok;
-    public string? Message { get; set; } = string.Empty;
-    public T? Payload { get; set; }
-}
-
+/// <summary>
+/// Class representing HTTP results with a default payload of type 'object'
+/// </summary>
 public class HttpResult : HttpResultBase<object>
 {
-
     private HttpResult(HttpResultStatus status, string? message = default, object? payload = default)
     {
         Message = message;
@@ -23,12 +12,15 @@ public class HttpResult : HttpResultBase<object>
         Payload = payload;
     }
 
+    /// <summary>
+    /// Creates an HTTP result with a status of 'Error'
+    /// </summary>
     public static HttpResult NotOk(string? errorMsg = default, object? payload = default)
         => new(HttpResultStatus.Error, errorMsg, payload);
 
+    /// <summary>
+    /// Creates an HTTP result with a status of 'Ok'
+    /// </summary>
     public static HttpResult Ok(object? payload = default, string? message = default)
         => new(HttpResultStatus.Ok, message, payload);
-
 }
-
-

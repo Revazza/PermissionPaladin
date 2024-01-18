@@ -5,6 +5,11 @@ using PermissionPaladin.Infrastructure.Caching.Models;
 
 namespace PermissionPaladin.Infrastructure.Caching.Behaviour;
 
+/// <summary>
+/// Pipeline behavior for caching query results based on specified criteria
+/// </summary>
+/// <typeparam name="TRequest">The type of the query request</typeparam>
+/// <typeparam name="TResponse">The type of the query response</typeparam>
 public class QueryCachingBehaviour<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>
     where TRequest : ICacheableQuery
@@ -20,6 +25,13 @@ public class QueryCachingBehaviour<TRequest, TResponse>
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Handles the query, either retrieving cached data or executing the query and caching the result
+    /// </summary>
+    /// <param name="request">The query request</param>
+    /// <param name="next">The next step in the pipeline</param>
+    /// <param name="cancellationToken">The cancellation token</param>
+    /// <returns>The query response</returns>
     public async Task<TResponse> Handle(
         TRequest request,
         RequestHandlerDelegate<TResponse> next,
@@ -52,6 +64,7 @@ public class QueryCachingBehaviour<TRequest, TResponse>
         => EqualityComparer<TResponse>.Default.Equals(result, default) ||
         result is not IEnumerable<object> enumerable ||
         !enumerable.Any();
+
     private static string CreateCacheKey(string key, string salt) => $"{key}-{salt}";
 
     private CacheOptions GetCacheOptions(TRequest request)

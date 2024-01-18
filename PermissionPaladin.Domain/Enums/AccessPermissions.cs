@@ -1,5 +1,8 @@
 namespace PermissionPaladin.Domain.Enums;
 
+/// <summary>
+/// Enum defining access permissions in the application.
+/// </summary>
 public enum AccessPermissions
 {
     AddProduct = 1,

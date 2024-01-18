@@ -1,6 +1,6 @@
 using PermissionPaladin.Domain.Users;
 
-namespace PermissionPaladin.Persistance.Interfaces;
+namespace PermissionPaladin.Persistance.Repositories.Interfaces;
 
 public interface IUserRepository : IGenericRepository<User, int>
 {

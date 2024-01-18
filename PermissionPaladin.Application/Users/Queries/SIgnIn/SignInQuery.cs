@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using PermissionPaladin.Application.Shared;
+using PermissionPaladin.Infrastructure.Shared.HttpResults;
 
 namespace PermissionPaladin.Application.Users.Queries.SIgnIn;
 

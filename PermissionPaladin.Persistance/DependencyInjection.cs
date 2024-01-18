@@ -2,9 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PermissionPaladin.Persistance.Context;
-using PermissionPaladin.Persistance.Interfaces;
 using PermissionPaladin.Persistance.Repositories;
+using PermissionPaladin.Persistance.Repositories.Interfaces;
 using PermissionPaladin.Persistance.Services;
+using PermissionPaladin.Persistance.Services.Interfaces;
 
 namespace PermissionPaladin.Persistance;
 

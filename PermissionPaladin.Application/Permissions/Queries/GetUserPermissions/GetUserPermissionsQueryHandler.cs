@@ -1,6 +1,6 @@
 using MediatR;
 using PermissionPaladin.Domain.Roles.Permissions;
-using PermissionPaladin.Persistance.Interfaces;
+using PermissionPaladin.Persistance.Repositories.Interfaces;
 
 namespace PermissionPaladin.Application.Permissions.Queries.GetUserPermissions;
 

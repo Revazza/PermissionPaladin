@@ -5,15 +5,22 @@ using PermissionPaladin.Application.Authentication.Models;
 using PermissionPaladin.Application.Permissions.Queries.GetUserPermissions;
 using PermissionPaladin.Application.Services;
 using PermissionPaladin.Domain.Roles.Permissions;
-using PermissionPaladin.Persistance.Interfaces;
 
 namespace PermissionPaladin.Application.Authentication.Handlers;
 
+/// <summary>
+/// Authorization handler responsible for checking user permissions based on requirements
+/// </summary>
 public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionRequirement>
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;
     private readonly IUserService _userService;
 
+    /// <summary>
+    /// Initializes a new instance of the PermissionAuthorizationHandler class
+    /// </summary>
+    /// <param name="serviceScopeFactory">The service scope factory for creating scoped service instances</param>
+    /// <param name="userService">The user service for accessing user-related information</param>
     public PermissionAuthorizationHandler(
         IServiceScopeFactory serviceScopeFactory,
         IUserService userService)
@@ -22,6 +29,11 @@ public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionReq
         _userService = userService;
     }
 
+    /// <summary>
+    /// Handles the authorization requirement asynchronously
+    /// </summary>
+    /// <param name="context">The authorization context</param>
+    /// <param name="requirement">The permission requirement</param>
     protected override async Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
         PermissionRequirement requirement)
@@ -45,5 +57,4 @@ public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionReq
 
     private static bool HasPermission(List<Permission> permissions, string requiredPermission)
         => permissions.Any(x => x.Name == requiredPermission);
-
 }

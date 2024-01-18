@@ -1,8 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using PermissionPaladin.Application.Authentication.Services;
-using PermissionPaladin.Application.Shared;
 using PermissionPaladin.Domain.Users;
+using PermissionPaladin.Infrastructure.Shared.HttpResults;
 
 namespace PermissionPaladin.Application.Users.Queries.SIgnIn;
 
