@@ -10,5 +10,5 @@ public enum AccessPermissions
     RemoveProduct = 3,
     ViewProduct = 4,
     AccessAdminMenu = 5,
-
+    AccessUserMenu = 6,
 }

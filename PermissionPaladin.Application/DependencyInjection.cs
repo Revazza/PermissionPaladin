@@ -79,7 +79,13 @@ public static class DependencyInjection
                 opt.TokenValidationParameters = tokenValidationParameters;
             });
 
-        services.AddIdentity<User, Role>()
+        services.AddIdentity<User, Role>(options =>
+        {
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireUppercase = false;
+            options.Password.RequireDigit = false;
+            options.User.RequireUniqueEmail = false;
+        })
             .AddEntityFrameworkStores<PermissionPaladinDbContext>()
             .AddDefaultTokenProviders();
         return services;

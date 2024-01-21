@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PermissionPaladin.Persistance.Context;
 
@@ -11,9 +12,11 @@ using PermissionPaladin.Persistance.Context;
 namespace PermissionPaladin.Persistance.Migrations
 {
     [DbContext(typeof(PermissionPaladinDbContext))]
-    partial class PermissionPaladinDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240121025828_AddMissingRolePermissions")]
+    partial class AddMissingRolePermissions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -207,21 +210,21 @@ namespace PermissionPaladin.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "59637d0d-5571-4ba3-83e4-f0e595819a7c",
+                            ConcurrencyStamp = "dc9abd13-2e7f-439d-bdb0-f0422ea4185c",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "94a6d748-1efb-4cd0-9a6b-84a9cba90bfa",
+                            ConcurrencyStamp = "02e597ce-8fbe-47e1-8e9f-4706a84dee0d",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "87de5db2-e072-4ef6-a9be-cf0cd2e67826",
+                            ConcurrencyStamp = "ad79d59d-f9f5-4061-9c52-d7a0202f0718",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -379,13 +382,13 @@ namespace PermissionPaladin.Persistance.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bdb66dfb-f5c8-4a27-8e7b-c327610be691",
+                            ConcurrencyStamp = "02dd4d22-ba31-45fc-9a5f-cf87f27534a8",
                             Email = "srevaza1236@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SREVAZA1236@GMAIL.COM",
                             NormalizedUserName = "SANDRO",
-                            PasswordHash = "AFTFPJsEHY1JTFmHEzXRIaft6kT7cNODKRYxDw9hDCKMGv8arc3fbKjTwT/Uu0mJ2Q==",
+                            PasswordHash = "AINnCtnA5w/e6V6goy49e+XvOmrE/kCQ3hBRqUXnAB9yfN/7qW5qYcNELPkmWFn94w==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
@@ -411,10 +414,6 @@ namespace PermissionPaladin.Persistance.Migrations
             modelBuilder.Entity("PermissionPaladin.Domain.Users.Customers.Customer", b =>
                 {
                     b.HasBaseType("PermissionPaladin.Domain.Users.User");
-
-                    b.Property<string>("NickName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Customer");
                 });

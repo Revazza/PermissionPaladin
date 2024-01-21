@@ -3,7 +3,7 @@
 /// <summary>
 /// Enum representing the status of HTTP results
 /// </summary>
-public enum HttpResultStatus
+public enum ResultStatus
 {
     Ok = 1,
     Error = 0,

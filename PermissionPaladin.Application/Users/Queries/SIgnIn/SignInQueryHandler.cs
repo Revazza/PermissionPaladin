@@ -6,7 +6,7 @@ using PermissionPaladin.Infrastructure.Shared.HttpResults;
 
 namespace PermissionPaladin.Application.Users.Queries.SIgnIn;
 
-public class SignInQueryHandler : IRequestHandler<SignInQuery, HttpResult>
+public class SignInQueryHandler : IRequestHandler<SignInQuery, Result>
 {
     private readonly UserManager<User> _userManager;
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
@@ -17,24 +17,24 @@ public class SignInQueryHandler : IRequestHandler<SignInQuery, HttpResult>
         _jwtTokenGenerator = jwtTokenGenerator;
     }
 
-    public async Task<HttpResult> Handle(SignInQuery request, CancellationToken cancellationToken)
+    public async Task<Result> Handle(SignInQuery request, CancellationToken cancellationToken)
     {
         var user = await _userManager.FindByNameAsync(request.UserName);
 
         if (user is null)
         {
-            return HttpResult.NotOk("User doesn't exist");
+            return Result.NotOk("User doesn't exist");
         }
 
         var isCorrectPassword = await _userManager.CheckPasswordAsync(user, request.Password);
 
         if (!isCorrectPassword)
         {
-            return HttpResult.NotOk("Invalid credentials");
+            return Result.NotOk("Invalid credentials");
         }
 
         var token = _jwtTokenGenerator.Generate(user);
 
-        return HttpResult.Ok(token);
+        return Result.Ok(token);
     }
 }

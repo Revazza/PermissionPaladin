@@ -39,7 +39,7 @@ public static class DependencyInjection
         return services.AddDbContext<PermissionPaladinDbContext>(options =>
         {
             options.UseSqlServer(configuration.GetConnectionString(PermissionPaladinDbContext.SectionName));
-        }); ;
+        });
     }
 
 }

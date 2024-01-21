@@ -3,9 +3,9 @@ namespace PermissionPaladin.Infrastructure.Shared.HttpResults;
 /// <summary>
 /// Class representing HTTP results with a default payload of type 'object'
 /// </summary>
-public class HttpResult : HttpResultBase<object>
+public class Result : ResultBase<object>
 {
-    private HttpResult(HttpResultStatus status, string? message = default, object? payload = default)
+    private Result(ResultStatus status, string? message = default, object? payload = default)
     {
         Message = message;
         Status = status;
@@ -15,12 +15,12 @@ public class HttpResult : HttpResultBase<object>
     /// <summary>
     /// Creates an HTTP result with a status of 'Error'
     /// </summary>
-    public static HttpResult NotOk(string? errorMsg = default, object? payload = default)
-        => new(HttpResultStatus.Error, errorMsg, payload);
+    public static Result NotOk(string? errorMsg = default, object? payload = default)
+        => new(ResultStatus.Error, errorMsg, payload);
 
     /// <summary>
     /// Creates an HTTP result with a status of 'Ok'
     /// </summary>
-    public static HttpResult Ok(object? payload = default, string? message = default)
-        => new(HttpResultStatus.Ok, message, payload);
+    public static Result Ok(object? payload = default, string? message = default)
+        => new(ResultStatus.Ok, message, payload);
 }

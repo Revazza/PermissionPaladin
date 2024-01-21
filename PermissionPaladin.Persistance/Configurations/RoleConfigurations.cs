@@ -9,6 +9,7 @@ public class RoleConfigurations : IEntityTypeConfiguration<Role>
 {
     public void Configure(EntityTypeBuilder<Role> builder)
     {
+        builder.Property(x => x.Id).ValueGeneratedOnAdd();
         builder.HasMany(role => role.Permissions)
             .WithMany(perrmission => perrmission.Roles)
             .UsingEntity<RolePermission>();

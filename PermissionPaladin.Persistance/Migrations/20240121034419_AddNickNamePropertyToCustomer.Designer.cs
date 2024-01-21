@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PermissionPaladin.Persistance.Context;
 
@@ -11,9 +12,11 @@ using PermissionPaladin.Persistance.Context;
 namespace PermissionPaladin.Persistance.Migrations
 {
     [DbContext(typeof(PermissionPaladinDbContext))]
-    partial class PermissionPaladinDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240121034419_AddNickNamePropertyToCustomer")]
+    partial class AddNickNamePropertyToCustomer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
