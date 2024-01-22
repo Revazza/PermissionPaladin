@@ -2,7 +2,7 @@ using Microsoft.Extensions.Caching.Memory;
 using PermissionPaladin.Infrastructure.Caching.Interfaces;
 using PermissionPaladin.Infrastructure.Enum;
 
-namespace PermissionPaladin.Infrastructure.Caching;
+namespace PermissionPaladin.Infrastructure.Caching.Services;
 
 /// <summary>
 /// Service providing caching functionality using MemoryCache

@@ -1,7 +1,6 @@
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PermissionPaladin.Infrastructure.Caching;
 using PermissionPaladin.Infrastructure.Caching.Behaviour;
 using PermissionPaladin.Infrastructure.Caching.Interfaces;
 using PermissionPaladin.Infrastructure.Services.Interfaces;
@@ -9,6 +8,7 @@ using PermissionPaladin.Infrastructure.Services;
 using System.ComponentModel;
 using PermissionPaladin.Infrastructure.Repositories.Interfaces;
 using PermissionPaladin.Infrastructure.Repositories;
+using PermissionPaladin.Infrastructure.Caching.Services;
 
 namespace PermissionPaladin.Infrastructure;
 
