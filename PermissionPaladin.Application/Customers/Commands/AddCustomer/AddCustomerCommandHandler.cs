@@ -1,4 +1,3 @@
-using Azure.Core;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using PermissionPaladin.Domain.Roles;
@@ -12,8 +11,7 @@ public class AddCustomerCommandHandler : IRequestHandler<AddCustomerCommand, Res
 {
     private readonly UserManager<User> _userManager;
 
-    public AddCustomerCommandHandler(
-        UserManager<User> userManager)
+    public AddCustomerCommandHandler(UserManager<User> userManager)
     {
         _userManager = userManager;
     }
@@ -22,11 +20,12 @@ public class AddCustomerCommandHandler : IRequestHandler<AddCustomerCommand, Res
     {
         await EnsureNoDuplicateUsernameExistsAsync(request.UserName);
         var customer = await CreateCustomerAsync(request);
-        await AddCustomerToRoleAsync(customer);
+        await AddToRoleAsync(customer);
+
         return Result.Ok(customer);
     }
 
-    private async Task AddCustomerToRoleAsync(Customer customer)
+    private async Task AddToRoleAsync(Customer customer)
     {
         var result = await _userManager.AddToRoleAsync(customer, RolesProvider.Customer.Name!);
 

@@ -48,13 +48,13 @@ public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionReq
         context.Succeed(requirement);
     }
 
-    private async Task<List<Permission>> GetUserPermissionsAsync()
+    private async Task<IEnumerable<Permission>> GetUserPermissionsAsync()
     {
         using var scope = _serviceScopeFactory.CreateScope();
         var mediator = scope.ServiceProvider.GetRequiredService<ISender>();
         return await mediator.Send(new GetUserPermissionsQuery(_userService.GetCurrentUserId()));
     }
 
-    private static bool HasPermission(List<Permission> permissions, string requiredPermission)
+    private static bool HasPermission(IEnumerable<Permission> permissions, string requiredPermission)
         => permissions.Any(x => x.Name == requiredPermission);
 }

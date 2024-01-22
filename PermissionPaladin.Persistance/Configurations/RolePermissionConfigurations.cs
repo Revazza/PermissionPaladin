@@ -27,6 +27,7 @@ public class RolePermissionConfigurations : IEntityTypeConfiguration<RolePermiss
         return new List<RolePermission>()
         {
             Create(RolesProvider.Customer,AccessPermissions.ViewProduct),
+            Create(RolesProvider.Customer,AccessPermissions.AccessCustomerMenu),
             Create(RolesProvider.Customer,AccessPermissions.AccessUserMenu),
         };
     }

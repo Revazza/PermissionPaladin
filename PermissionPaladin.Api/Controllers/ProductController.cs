@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using PermissionPaladin.Application.Authentication.Attributes;
 using PermissionPaladin.Domain.Enums;
 
@@ -7,11 +8,11 @@ namespace PermissionPaladin.Api.Controllers;
 [ApiController]
 public class ProductController : ControllerBase
 {
+    private readonly ISender _mediator;
 
-    [HttpGet]
-    public async Task<IActionResult> Test()
+    public ProductController(ISender mediator)
     {
-        return Ok("");
+        _mediator = mediator;
     }
 
     [HasPermission(AccessPermissions.AddProduct)]
