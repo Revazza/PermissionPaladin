@@ -1,8 +1,7 @@
 using MediatR;
+using PermissionPaladin.Infrastructure.Repositories.Interfaces;
+using PermissionPaladin.Infrastructure.Services.Interfaces;
 using PermissionPaladin.Infrastructure.Shared.HttpResults;
-using PermissionPaladin.Persistance.Repositories.Interfaces;
-using PermissionPaladin.Persistance.Services;
-using PermissionPaladin.Persistance.Services.Interfaces;
 
 namespace PermissionPaladin.Application.Admins.Commands.AddToRole;
 

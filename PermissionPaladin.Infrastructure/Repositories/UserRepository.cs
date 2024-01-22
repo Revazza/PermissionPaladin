@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using PermissionPaladin.Domain.Users;
+using PermissionPaladin.Infrastructure.Repositories.Interfaces;
 using PermissionPaladin.Persistance.Context;
-using PermissionPaladin.Persistance.Repositories.Interfaces;
 
-namespace PermissionPaladin.Persistance.Repositories;
+namespace PermissionPaladin.Infrastructure.Repositories;
 
 public class UserRepository : GenericRepository<User, int>, IUserRepository
 {

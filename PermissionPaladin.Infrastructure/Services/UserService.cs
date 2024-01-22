@@ -1,13 +1,9 @@
 using Microsoft.AspNetCore.Http;
+using PermissionPaladin.Infrastructure.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace PermissionPaladin.Application.Services;
-
-public interface IUserService
-{
-    int GetCurrentUserId();
-}
+namespace PermissionPaladin.Infrastructure.Services;
 
 public class UserService : IUserService
 {

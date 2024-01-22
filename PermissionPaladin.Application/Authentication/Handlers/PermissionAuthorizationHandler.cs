@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
 using PermissionPaladin.Application.Authentication.Models;
 using PermissionPaladin.Application.Permissions.Queries.GetUserPermissions;
-using PermissionPaladin.Application.Services;
 using PermissionPaladin.Domain.Roles.Permissions;
+using PermissionPaladin.Infrastructure.Services.Interfaces;
 
 namespace PermissionPaladin.Application.Authentication.Handlers;
 

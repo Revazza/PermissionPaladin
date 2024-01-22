@@ -1,6 +1,6 @@
 using MediatR;
 using PermissionPaladin.Domain.Users.Customers;
-using PermissionPaladin.Persistance.Repositories.Interfaces;
+using PermissionPaladin.Infrastructure.Repositories.Interfaces;
 
 namespace PermissionPaladin.Application.Customers.Queries.GetCustomerById;
 

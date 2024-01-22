@@ -1,6 +1,6 @@
 using PermissionPaladin.Domain.Users.Managers;
 
-namespace PermissionPaladin.Persistance.Repositories.Interfaces;
+namespace PermissionPaladin.Infrastructure.Repositories.Interfaces;
 
 public interface IManagerRepository : IGenericRepository<Manager, int>
 {

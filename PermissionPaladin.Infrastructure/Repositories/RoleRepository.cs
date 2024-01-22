@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using PermissionPaladin.Domain.Roles;
+using PermissionPaladin.Infrastructure.Repositories.Interfaces;
 using PermissionPaladin.Persistance.Context;
-using PermissionPaladin.Persistance.Repositories.Interfaces;
 
-namespace PermissionPaladin.Persistance.Repositories;
+namespace PermissionPaladin.Infrastructure.Repositories;
 
 public class RoleRepository : GenericRepository<Role, int>, IRoleRepository
 {

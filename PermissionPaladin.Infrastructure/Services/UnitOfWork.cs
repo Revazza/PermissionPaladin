@@ -1,7 +1,7 @@
+using PermissionPaladin.Infrastructure.Services.Interfaces;
 using PermissionPaladin.Persistance.Context;
-using PermissionPaladin.Persistance.Services.Interfaces;
 
-namespace PermissionPaladin.Persistance.Services;
+namespace PermissionPaladin.Infrastructure.Services;
 
 /// <summary>
 /// Implementation of the Unit of Work pattern for handling database transactions

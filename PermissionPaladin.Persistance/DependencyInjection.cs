@@ -2,10 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PermissionPaladin.Persistance.Context;
-using PermissionPaladin.Persistance.Repositories;
-using PermissionPaladin.Persistance.Repositories.Interfaces;
-using PermissionPaladin.Persistance.Services;
-using PermissionPaladin.Persistance.Services.Interfaces;
 
 namespace PermissionPaladin.Persistance;
 
@@ -16,21 +12,9 @@ public static class DependencyInjection
         ConfigurationManager configuration)
     {
         return services
-            .AddDatabase(configuration)
-            .AddRepositories();
+            .AddDatabase(configuration);
     }
 
-    private static IServiceCollection AddRepositories(
-        this IServiceCollection services)
-    {
-        return services
-            .AddScoped<IUnitOfWork, UnitOfWork>()
-            .AddScoped<IPermissionRepository, PermissionRepository>()
-            .AddScoped<IRoleRepository, RoleRepository>()
-            .AddScoped<IManagerRepository, ManagerRepository>()
-            .AddScoped<IUserRepository, UserRepository>()
-            .AddScoped<ICustomerRepository, CustomerRepository>();
-    }
 
     private static IServiceCollection AddDatabase(
         this IServiceCollection services,

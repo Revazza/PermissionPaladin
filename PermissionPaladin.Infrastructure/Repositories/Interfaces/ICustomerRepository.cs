@@ -1,7 +1,6 @@
 ﻿using PermissionPaladin.Domain.Users.Customers;
-using PermissionPaladin.Domain.Users.Managers;
 
-namespace PermissionPaladin.Persistance.Repositories.Interfaces;
+namespace PermissionPaladin.Infrastructure.Repositories.Interfaces;
 
 public interface ICustomerRepository : IGenericRepository<Customer, int>
 {

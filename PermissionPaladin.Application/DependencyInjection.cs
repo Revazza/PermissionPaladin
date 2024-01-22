@@ -9,7 +9,6 @@ using PermissionPaladin.Application.Authentication.Handlers;
 using PermissionPaladin.Application.Authentication.Models;
 using PermissionPaladin.Application.Authentication.Providers;
 using PermissionPaladin.Application.Authentication.Services;
-using PermissionPaladin.Application.Services;
 using PermissionPaladin.Domain.Roles;
 using PermissionPaladin.Domain.Users;
 using PermissionPaladin.Persistance.Context;
@@ -40,7 +39,6 @@ public static class DependencyInjection
         return services
             .AddHttpContextAccessor()
             .AddTransient<IJwtTokenGenerator, JwtTokenGenerator>()
-            .AddTransient<IUserService, UserService>()
             .AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>()
             .AddSingleton<IAuthorizationPolicyProvider, PermissionAuthorizationPolicyProvider>();
 

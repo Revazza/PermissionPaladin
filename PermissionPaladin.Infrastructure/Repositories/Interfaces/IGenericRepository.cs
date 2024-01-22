@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 
+namespace PermissionPaladin.Infrastructure.Repositories.Interfaces;
+
 public interface IGenericRepository<T, TId>
     where T : class
 {

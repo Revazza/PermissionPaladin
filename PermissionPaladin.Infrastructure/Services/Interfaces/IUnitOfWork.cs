@@ -1,4 +1,4 @@
-﻿namespace PermissionPaladin.Persistance.Services.Interfaces;
+﻿namespace PermissionPaladin.Infrastructure.Services.Interfaces;
 
 /// <summary>
 /// Defines the interface for the Unit of Work pattern to manage database transactions.

@@ -1,6 +1,6 @@
 using PermissionPaladin.Domain.Roles;
 
-namespace PermissionPaladin.Persistance.Repositories.Interfaces;
+namespace PermissionPaladin.Infrastructure.Repositories.Interfaces;
 
 public interface IRoleRepository : IGenericRepository<Role, int>
 {

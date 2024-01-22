@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
 using PermissionPaladin.Persistance.Context;
+using PermissionPaladin.Infrastructure.Repositories.Interfaces;
 
-namespace PermissionPaladin.Persistance.Repositories;
+namespace PermissionPaladin.Infrastructure.Repositories;
 
 public class GenericRepository<T, TId>
     : IGenericRepository<T, TId>

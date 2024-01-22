@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using PermissionPaladin.Application.Authentication.Attributes;
 using PermissionPaladin.Application.Permissions.Dtos;
 using PermissionPaladin.Application.Permissions.Queries.GetUserPermissions;
-using PermissionPaladin.Application.Services;
 using PermissionPaladin.Application.Users.Queries.GetUserById;
 using PermissionPaladin.Domain.Enums;
+using PermissionPaladin.Infrastructure.Services.Interfaces;
 
 namespace PermissionPaladin.Api.Controllers;
 [Route("api/users")]

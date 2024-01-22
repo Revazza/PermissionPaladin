@@ -6,8 +6,8 @@ using PermissionPaladin.Application.Authentication.Attributes;
 using PermissionPaladin.Application.Customers.Commands.AddCustomer;
 using PermissionPaladin.Application.Customers.Dtos;
 using PermissionPaladin.Application.Customers.Queries.GetCustomerById;
-using PermissionPaladin.Application.Services;
 using PermissionPaladin.Domain.Enums;
+using PermissionPaladin.Infrastructure.Services.Interfaces;
 
 namespace PermissionPaladin.Api.Controllers;
 [Route("api/customers")]

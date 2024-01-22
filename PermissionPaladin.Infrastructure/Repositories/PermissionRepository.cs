@@ -1,8 +1,8 @@
 using PermissionPaladin.Domain.Roles.Permissions;
+using PermissionPaladin.Infrastructure.Repositories.Interfaces;
 using PermissionPaladin.Persistance.Context;
-using PermissionPaladin.Persistance.Repositories.Interfaces;
 
-namespace PermissionPaladin.Persistance.Repositories;
+namespace PermissionPaladin.Infrastructure.Repositories;
 
 public class PermissionRepository : GenericRepository<Permission, int>, IPermissionRepository
 {
